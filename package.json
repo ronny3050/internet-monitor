@@ -1,0 +1,19 @@
+{
+  "name": "internet-speed",
+  "version": "1.0.0",
+  "description": "Displays ping, download and upload speed on your smart mirror.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "internet",
+    "speed"
+  ],
+  "author": "Debayan Deb",
+  "license": "MIT",
+  "dependencies": {
+    "round-to": "^1.1.0",
+    "speedtest-net": "^1.2.7"
+  }
+}
