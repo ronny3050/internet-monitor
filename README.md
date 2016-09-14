@@ -72,7 +72,7 @@ The following properties can be configured:
 			<td>Display additional information about test<br>
 				<br><b>Possible values:</b> <code>true</code> or <code>false</code>
 				<br><b>Default value:</b> <code>false</code>
-				<br><img src="https://github.com/ronny3050/internet-monitor/blob/master/.previews/preview_verbose.png" width="50%" height="0.1%"></img>
+				<br><img src="https://github.com/ronny3050/internet-monitor/blob/master/.previews/preview_verbose.png" ></img>
 			</td>
 		</tr>
 		<tr>
@@ -80,7 +80,7 @@ The following properties can be configured:
 			<td>Display Internet strength<br>
 				<br><b>Possible values:</b> <code>true</code> or <code>false</code>
 				<br><b>Default value:</b> <code>true</code>
-				<br><img src="https://github.com/ronny3050/internet-monitor/blob/master/.previews/preview_strength.png" width="50%" height="0.1%"></img>
+				<br><img src="https://github.com/ronny3050/internet-monitor/blob/master/.previews/preview_strength.png" ></img>
 			</td>
 		</tr>
 		<tr>
@@ -88,7 +88,7 @@ The following properties can be configured:
 			<td>Display download and upload speed gauges<br>
 				<br><b>Possible values:</b> <code>true</code> or <code>false</code>
 				<br><b>Default value:</b> <code>true</code>
-				<br><img src="https://github.com/ronny3050/internet-monitor/blob/master/.previews/preview_speed.png" width="50%" height="2%"></img>
+				<br><img src="https://github.com/ronny3050/internet-monitor/blob/master/.previews/preview_speed.png" ></img>
 
 			</td>
 		</tr>
