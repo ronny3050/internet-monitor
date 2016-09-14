@@ -72,7 +72,7 @@ The following properties can be configured:
 			<td>Display additional information about test<br>
 				<br><b>Possible values:</b> <code>true</code> or <code>false</code>
 				<br><b>Default value:</b> <code>false</code>
-				<br><img src="https://github.com/ronny3050/internet-monitor/blob/master/.previews/preview_verbose.png" ></img>
+				<br><img src="https://github.com/ronny3050/internet-monitor/blob/master/.previews/preview_verbose.png" height="60%"></img>
 			</td>
 		</tr>
 		<tr>
@@ -96,7 +96,7 @@ The following properties can be configured:
 		<tr>
 			<td><code>strengthIconSize</code></td>
 			<td>Size of the strength icon<br>
-				<br><b>Default value:</b> <code>50</code>
+				<br><b>Default value:</b> <code>80</code>
 			</td>
 		</tr>
 	</tbody>
