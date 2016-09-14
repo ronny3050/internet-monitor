@@ -5,6 +5,8 @@ Monitors internet statistics such as strength and speed information on a smart m
 
 ![Minimal Visualization](https://github.com/ronny3050/internet-monitor/blob/master/.previews/preview_minimal.gif)
 
+![StrengthFullscreen Visualization](https://github.com/ronny3050/internet-monitor/blob/master/.previews/preview_strength_fullscreen.png)
+
 ## Installing the module
 
 To install the module, just clone this repository to your __modules__ folder: `git clone https://github.com/ronny3050/internet-monitor.git internet-monitor`. 
@@ -53,65 +55,50 @@ The following properties can be configured:
 			</td>
 		</tr>
 		<tr>
-			<td><code>numberOfNotifications</code></td>
-			<td>Number of notifications to display at a time<br>
-				<br><b>Default value:</b> <code>5</code>
-				<br>If set to 0, no notification messages will be displayed.
+			<td><code>maxTime</code></td>
+			<td>Maximum time to test internet speed (Milliseconds)<br>
+				<br><b>Default value:</b> <code>20000</code>
 			</td>
 		</tr>
 		<tr>
-			<td><code>displayNoticiationIcon</code></td>
-			<td>Display app icon that generated the notification<br>
-				<br><b>Possible values:</b> <code>true</code> or <code>false</code>
-				<br><b>Default value:</b> <code>true</code>
+			<td><code>updateInterval</code></td>
+			<td>Time to rerun/update tests (Milliseconds)<br>
+				<br><b>Default value:</b> <code>0</code>
+				<br>Please note that <code>updateInterval</code> has to be greater than <code>maxTime</code>
 			</td>
 		</tr>
 		<tr>
-			<td><code>displayMessage</code></td>
-			<td>Display body of the notification<br>
+			<td><code>verbose</code></td>
+			<td>Display additional information about test<br>
 				<br><b>Possible values:</b> <code>true</code> or <code>false</code>
-				<br><b>Default value:</b> <code>true</code>
-				<br><img src="https://github.com/ronny3050/phone-notification-mirror/blob/master/.github/message.png" width="50%" height="0.1%"></img>
+				<br><b>Default value:</b> <code>false</code>
+				<br><img src="https://github.com/ronny3050/internet-monitor/blob/master/.previews/preview_verbose.png" width="50%" height="0.1%"></img>
 			</td>
 		</tr>
 		<tr>
-			<td><code>displayCount</code></td>
-			<td>Display notification count<br>
+			<td><code>displayStrength</code></td>
+			<td>Display Internet strength<br>
 				<br><b>Possible values:</b> <code>true</code> or <code>false</code>
 				<br><b>Default value:</b> <code>true</code>
-				<br><img src="https://github.com/ronny3050/phone-notification-mirror/blob/master/.github/count.png" width="50%" height="0.1%"></img>
+				<br><img src="https://github.com/ronny3050/internet-monitor/blob/master/.previews/preview_strength.png" width="50%" height="0.1%"></img>
 			</td>
 		</tr>
 		<tr>
-			<td><code>alert</code></td>
-			<td>Show alerts on new notification<br>
+			<td><code>displaySpeed</code></td>
+			<td>Display download and upload speed gauges<br>
 				<br><b>Possible values:</b> <code>true</code> or <code>false</code>
 				<br><b>Default value:</b> <code>true</code>
-				<br>Please note that this requires the alert module to be present in the config file. For instance,
-				<code>modules: [
-	{
-		widget: 'alert'
-	}
-]</code>
-		<br><img src="https://github.com/ronny3050/phone-notification-mirror/blob/master/.github/alert.png" width="50%" height="2%"></img>
+				<br><img src="https://github.com/ronny3050/internet-monitor/blob/master/.previews/preview_speed.png" width="50%" height="2%"></img>
 
 			</td>
 		</tr>
 
 		<tr>
-			<td><code>fade</code></td>
-			<td>Fade older notifications to black. (Gradient)<br>
-				<br><b>Possible values:</b> <code>true</code> or <code>false</code>
-				<br><b>Default value:</b> <code>true</code>
-			</td>
-		</tr>
-		<tr>
-			<td><code>maxCharacters</code></td>
-			<td>Number of characters to display per notification body<br>
+			<td><code>strengthIconSize</code></td>
+			<td>Size of the strength icon<br>
 				<br><b>Default value:</b> <code>50</code>
 			</td>
 		</tr>
-
 	</tbody>
 </table>
 
