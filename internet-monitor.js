@@ -2,7 +2,7 @@
  * Created by debayan on 7/24/16.
  */
 
-Widget.register("internet-monitor",{
+Module.register("internet-monitor",{
 
     defaults : {
     },
@@ -158,17 +158,17 @@ Widget.register("internet-monitor",{
                     d = document.getElementById('#pingDiv');
                 }
                 if(payload < 70){
-                    $(d).append('<img src="' + window.location.href + '/widgets/internet-monitor//images/' + 'strength_full.png" width=' +  this.config.strengthIconSize +'height=' + this.config.strengthIconSize +'/>');
+                    $(d).append('<img src="' + window.location.href + '/modules/internet-monitor//images/' + 'strength_full.png" width=' +  this.config.strengthIconSize +'height=' + this.config.strengthIconSize +'/>');
                 }
                 else if(payload >= 70 && payload < 100){
-                    $(d).append('<img src="' + window.location.href + '/widgets/internet-monitor//images/' + 'strength_almost.png" width=' + this.config.strengthIconSize +' height=' + this.config.strengthIconSize + '/>');
+                    $(d).append('<img src="' + window.location.href + '/modules/internet-monitor//images/' + 'strength_almost.png" width=' + this.config.strengthIconSize +' height=' + this.config.strengthIconSize + '/>');
                 }
                 else if(payload >= 100 && payload < 150){
-                    $(d).append('<img src="' + window.location.href + '/widgets/internet-monitor//images/' + 'strength_half.png" width=' + this.config.strengthIconSize +' height=' + this.config.strengthIconSize + '/>');
+                    $(d).append('<img src="' + window.location.href + '/modules/internet-monitor//images/' + 'strength_half.png" width=' + this.config.strengthIconSize +' height=' + this.config.strengthIconSize + '/>');
                 }
                 else if(payload >= 150)
                 {
-                    $(d).append('<img src="' + window.location.href + '/widgets/internet-monitor//images/' + 'strength_none.png" width=' + this.config.strengthIconSize +' height=' + this.config.strengthIconSize + '/>');
+                    $(d).append('<img src="' + window.location.href + '/modules/internet-monitor//images/' + 'strength_none.png" width=' + this.config.strengthIconSize +' height=' + this.config.strengthIconSize + '/>');
                 }
             }
         }
