@@ -41,7 +41,7 @@ Module.register("internet-monitor",{
                 'id: "downloadSpeedGauge",' +
                 'value: ' + 0 + ',' +
                 'min: 0,' +
-                'max: 100,' +
+                'max: ' +  this.config.maxGaugeScale + ',' +
                 'title: "Download Speed",' +
                 'refreshAnimationType:"linear",' +
                 'gaugeWidthScale: "0.8",' +
@@ -58,7 +58,7 @@ Module.register("internet-monitor",{
                 'id: "uploadSpeedGauge",' +
                 'value: ' + 0 + ',' +
                 'min: 0,' +
-                'max: 100,' +
+                'max: ' +  this.config.maxGaugeScale + ',' +
                 'title: "Upload Speed",' +
                 'refreshAnimationType:"linear",' +
                 'gaugeWidthScale: "0.8",' +
@@ -79,7 +79,7 @@ Module.register("internet-monitor",{
             'id: "downloadSpeedGauge",' +
             'value: ' + 0 + ',' +
             'min: 0,' +
-            'max: 100,' +
+            'max: ' +  this.config.maxGaugeScale + ',' +
             'title: "Download Speed",' +
             'refreshAnimationType:"linear",' +
             'gaugeWidthScale: "0.8",' +
@@ -92,7 +92,7 @@ Module.register("internet-monitor",{
             'id: "uploadSpeedGauge",' +
             'value: ' + 0 + ',' +
             'min: 0,' +
-            'max: 100,' +
+            'max: ' +  this.config.maxGaugeScale + ',' +
             'title: "Upload Speed",' +
             'refreshAnimationType:"linear",' +
             'gaugeWidthScale: "0.8",' +
@@ -117,7 +117,7 @@ Module.register("internet-monitor",{
                     this.downloadBarState = 'started';
                 }
                 console.log('updating DOWNLOAD');
-                download.refresh(payload, 100);
+                download.refresh(payload, this.config.maxGaugeScale);
             }
 
         }
@@ -125,7 +125,7 @@ Module.register("internet-monitor",{
         {
             if(this.config.displaySpeed) {
                 console.log('updating UPLOAD');
-                upload.refresh(payload,100);
+                upload.refresh(payload,this.config.maxGaugeScale);
             }
         }
         if(notification == 'data')
