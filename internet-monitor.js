@@ -26,7 +26,7 @@ Module.register("internet-monitor",{
     },
 
     getScripts: function(){
-        return [this.file('justgage-1.2.2/justgage.js'),this.file('justgage-1.2.2/raphael-2.1.4.min.js'),this.file('jquery.js'),this.file('convert.js')]
+        return [this.file('justgage-1.2.2/justgage.js'),this.file('justgage-1.2.2/raphael-2.1.4.min.js'),this.file('jquery.js')]
     },
 
     getStyles: function(){
@@ -154,65 +154,80 @@ Module.register("internet-monitor",{
                     $(d).appendTo('#pingDiv');
                 }
 
-                payload = 160;
+                if(this.config.hasOwnProperty('wifiSymbol')) {
+                    if (payload < 70) {
+                        $(d).append('<div class="wifi-symbol-4" > <div class="wifi-circle first"></div> <div class="wifi-circle second"></div> <div class="wifi-circle third"></div> <div class="wifi-circle fourth"></div> </div>');
+                    }
+                    else if (payload >= 70 && payload < 100) {
+                        $(d).append('<div class="wifi-symbol-2" > <div class="wifi-circle first"></div> <div class="wifi-circle second"></div> <div class="wifi-circle third"></div> <div class="wifi-circle fourth"></div> </div>');
+                    }
+                    else if (payload >= 100 && payload < 150) {
+                        $(d).append('<div class="wifi-symbol-3" > <div class="wifi-circle first"></div> <div class="wifi-circle second"></div> <div class="wifi-circle third"></div> <div class="wifi-circle fourth"></div> </div>');
+                    }
+                    else if (payload >= 150) {
+                        $(d).append('<div class="wifi-symbol-1" > <div class="wifi-circle first"></div> <div class="wifi-circle second"></div> <div class="wifi-circle third"></div> <div class="wifi-circle fourth"></div> </div>');
+                    }
 
-                if(payload < 70) {
-                    $(d).append('<div class="wifi-symbol-4" > <div class="wifi-circle first"></div> <div class="wifi-circle second"></div> <div class="wifi-circle third"></div> <div class="wifi-circle fourth"></div> </div>');
+
+                    $(".wifi-symbol-1 .wifi-circle").css({
+                        'border-color': this.config.wifiSymbol.fullColor,
+                        'font-size': this.config.wifiSymbol.size / 7,
+                        'margin-top': 0 - this.config.wifiSymbol.size - this.config.wifiSymbol.size * 0.25,
+                        'margin-left': 0.5 * (150 - this.config.wifiSymbol.size)
+                    });
+                    $(".wifi-symbol-1 [foo], .wifi-symbol-1").css({
+                        'width': this.config.wifiSymbol.size,
+                        'height': this.config.wifiSymbol.size
+                    });
+
+                    $(".wifi-symbol-2 .wifi-circle").css({
+                        'border-color': this.config.wifiSymbol.almostColor,
+                        'font-size': this.config.wifiSymbol.size / 7,
+                        'margin-top': 0 - this.config.wifiSymbol.size - this.config.wifiSymbol.size * 0.25,
+                        'margin-left': 0.5 * (150 - this.config.wifiSymbol.size),
+                    });
+                    $(".wifi-symbol-2 [foo], .wifi-symbol-2").css({
+                        'width': this.config.wifiSymbol.size,
+                        'height': this.config.wifiSymbol.size
+                    });
+
+                    $(".wifi-symbol-3 .wifi-circle").css({
+                        'border-color': this.config.wifiSymbol.halfColor,
+                        'font-size': this.config.wifiSymbol.size / 7,
+                        'margin-top': 0 - this.config.wifiSymbol.size - this.config.wifiSymbol.size * 0.25,
+                        'margin-left': 0.5 * (150 - this.config.wifiSymbol.size),
+                    });
+                    $(".wifi-symbol-3 [foo], .wifi-symbol-3").css({
+                        'width': this.config.wifiSymbol.size,
+                        'height': this.config.wifiSymbol.size
+                    });
+
+                    $(".wifi-symbol-4 .wifi-circle").css({
+                        'border-color': this.config.wifiSymbol.noneColor,
+                        'font-size': this.config.wifiSymbol.size / 7,
+                        'margin-top': 0 - this.config.wifiSymbol.size - this.config.wifiSymbol.size * 0.25,
+                        'margin-left': 0.5 * (150 - this.config.wifiSymbol.size),
+                    });
+                    $(".wifi-symbol-4 [foo], .wifi-symbol-4").css({
+                        'width': this.config.wifiSymbol.size,
+                        'height': this.config.wifiSymbol.size
+                    });
                 }
-                else if(payload >= 70 && payload < 100){
-                    $(d).append('<div class="wifi-symbol-2" > <div class="wifi-circle first"></div> <div class="wifi-circle second"></div> <div class="wifi-circle third"></div> <div class="wifi-circle fourth"></div> </div>');
+                else{
+                    if(payload < 70){
+                        $(d).append('<img src="' + this.data.path + 'images/' + 'strength_full.png" width=' +  this.config.strengthIconSize +'"height=' + this.config.strengthIconSize +'/>');
+                    }
+                    else if(payload >= 70 && payload < 100){
+                        $(d).append('<img src="' + this.data.path + 'images/' + 'strength_almost.png" width=' + this.config.strengthIconSize +'"height=' + this.config.strengthIconSize + '/>');
+                    }
+                    else if(payload >= 100 && payload < 150){
+                        $(d).append('<img src="' + this.data.path + 'images/' + 'strength_half.png" width=' + this.config.strengthIconSize +'"height=' + this.config.strengthIconSize + '/>');
+                    }
+                    else if(payload >= 150)
+                    {
+                        $(d).append('<img src="' + this.data.path + 'images/' + 'strength_none.png" width=' + this.config.strengthIconSize +'"height=' + this.config.strengthIconSize + '/>');
+                    }
                 }
-                else if(payload >= 100 && payload < 150){
-                    $(d).append('<div class="wifi-symbol-3" > <div class="wifi-circle first"></div> <div class="wifi-circle second"></div> <div class="wifi-circle third"></div> <div class="wifi-circle fourth"></div> </div>');
-                }
-                else if(payload >= 150){
-                    $(d).append('<div class="wifi-symbol-1" > <div class="wifi-circle first"></div> <div class="wifi-circle second"></div> <div class="wifi-circle third"></div> <div class="wifi-circle fourth"></div> </div>');
-                }
-
-
-                $(".wifi-symbol-1 .wifi-circle").css({
-                    'border-color': this.config.wifiSymbol.fullColor,
-                    'font-size':this.config.wifiSymbol.size/7,
-                    'margin-top': 0 - this.config.wifiSymbol.size -this.config.wifiSymbol.size*0.25,
-                    'margin-left': 0.5*(150-this.config.wifiSymbol.size)
-                });
-                $(".wifi-symbol-1 [foo], .wifi-symbol-1").css({
-                    'width':this.config.wifiSymbol.size,
-                    'height':this.config.wifiSymbol.size
-                });
-
-                $(".wifi-symbol-2 .wifi-circle").css({
-                    'border-color': this.config.wifiSymbol.almostColor,
-                    'font-size':this.config.wifiSymbol.size/7,
-                    'margin-top': 0 - this.config.wifiSymbol.size -this.config.wifiSymbol.size*0.25,
-                    'margin-left': 0.5*(150-this.config.wifiSymbol.size),
-                });
-                $(".wifi-symbol-2 [foo], .wifi-symbol-2").css({
-                    'width':this.config.wifiSymbol.size,
-                    'height':this.config.wifiSymbol.size
-                });
-
-                $(".wifi-symbol-3 .wifi-circle").css({
-                    'border-color': this.config.wifiSymbol.halfColor,
-                    'font-size':this.config.wifiSymbol.size/7,
-                    'margin-top': 0 - this.config.wifiSymbol.size -this.config.wifiSymbol.size*0.25,
-                    'margin-left': 0.5*(150-this.config.wifiSymbol.size),
-                });
-                $(".wifi-symbol-3 [foo], .wifi-symbol-3").css({
-                    'width':this.config.wifiSymbol.size,
-                    'height':this.config.wifiSymbol.size
-                });
-
-                $(".wifi-symbol-4 .wifi-circle").css({
-                    'border-color': this.config.wifiSymbol.noneColor,
-                    'font-size':this.config.wifiSymbol.size/7,
-                    'margin-top': 0 - this.config.wifiSymbol.size -this.config.wifiSymbol.size*0.25,
-                    'margin-left': 0.5*(150-this.config.wifiSymbol.size),
-                });
-                $(".wifi-symbol-4 [foo], .wifi-symbol-4").css({
-                    'width':this.config.wifiSymbol.size,
-                    'height':this.config.wifiSymbol.size
-                });
 
             }
         }
