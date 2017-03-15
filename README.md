@@ -135,12 +135,5 @@ The following properties can be configured:
 				<br><b>Default value:</b> <code>100</code>
 			</td>
 		</tr>
-		<tr>
-			<td><code>wifiSymbol (optional)</code></td>
-			<td>Customize WiFi Symbol<br>
-
-
-			</td>
-		</tr>
 	</tbody>
 </table>
