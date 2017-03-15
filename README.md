@@ -37,32 +37,7 @@ modules: [
 
 You can also customize the wifi symbol.
 
-````javascript
-modules: [
-	{
-		    module: 'internet-monitor',
-            position: 'top_center',
-            header: 'Internet Monitor',
-            config:{
-                type: '',
-                maxTime: 20000,
-                updateInterval: 0,
-                verbose: false,
-                displayStrength: true,
-                displaySpeed: true,
-                strengthIconSize: 80,
-                maxGaugeScale: 100,
-								wifiSymbol:{
-                		size: 50,
-                    fullColor: '#3afc25',
-                    almostColor: '#ffff0c',
-                    halfColor: '#ff8c00',
-										noneColor: '#ff1111'
-									},
-            },
-	}
-]
-````
+
 
 ## Configuration options
 
@@ -123,6 +98,6 @@ The following properties can be configured:
 			</td>
 		</tr>
 
-		
+
 	</tbody>
 </table>
