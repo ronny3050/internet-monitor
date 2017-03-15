@@ -9,7 +9,7 @@ Monitors internet statistics such as strength and speed information on a smart m
 
 ## Installing the module
 
-To install the module, just clone this repository to your __modules__ folder: `git clone https://github.com/ronny3050/internet-monitor.git internet-monitor`. 
+To install the module, just clone this repository to your __modules__ folder: `git clone https://github.com/ronny3050/internet-monitor.git internet-monitor`.
 Then run `cd internet-monitor` and `npm install` which will install the dependencies.
 
 ## Using the module
@@ -30,6 +30,42 @@ modules: [
                 displaySpeed: true,
                 strengthIconSize: 80,
                 maxGaugeScale: 100,
+								wifiSymbol:{
+                		size: 50,
+                    fullColor: '#3afc25',
+                    almostColor: '#ffff0c',
+                    halfColor: '#ff8c00',
+										noneColor: '#ff1111'
+				},
+            },
+	}
+]
+````
+
+You can also customize the wifi symbol.
+
+````javascript
+modules: [
+	{
+		    module: 'internet-monitor',
+            position: 'top_center',
+            header: 'Internet Monitor',
+            config:{
+                type: '',
+                maxTime: 20000,
+                updateInterval: 0,
+                verbose: false,
+                displayStrength: true,
+                displaySpeed: true,
+                strengthIconSize: 80,
+                maxGaugeScale: 100,
+								wifiSymbol:{
+                		size: 50,
+                    fullColor: '#3afc25',
+                    almostColor: '#ffff0c',
+                    halfColor: '#ff8c00',
+										noneColor: '#ff1111'
+									},
             },
 	}
 ]
@@ -106,6 +142,15 @@ The following properties can be configured:
 				<br><b>Default value:</b> <code>100</code>
 			</td>
 		</tr>
+		<tr>
+			<td><code>wifiSymbol (optional)</code></td>
+			<td>Customize WiFi Symbol<br>
+				<tr>
+					<td>size</td>
+					<td>Size of the wifi icon</td>
+				</tr>
+
+			</td>
+		</tr>
 	</tbody>
 </table>
-
