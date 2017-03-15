@@ -40,11 +40,7 @@ You can also customize the wifi symbol.
 ````javascript
 modules: [
 	{
-<<<<<<< HEAD
-		    module: 'internet-monitor',
-=======
 	    module: 'internet-monitor',
->>>>>>> 2d8e32d0faef691bf44429577d82ba6329e6aec3
             position: 'top_center',
             header: 'Internet Monitor',
             config:{
@@ -56,15 +52,6 @@ modules: [
                 displaySpeed: true,
                 strengthIconSize: 80,
                 maxGaugeScale: 100,
-<<<<<<< HEAD
-								wifiSymbol:{
-                		size: 50,
-                    fullColor: '#3afc25',
-                    almostColor: '#ffff0c',
-                    halfColor: '#ff8c00',
-										noneColor: '#ff1111'
-									},
-=======
 		wifiSymbol:{
                     size: 50,
                     fullColor: '#3afc25',
@@ -72,7 +59,6 @@ modules: [
                     halfColor: '#ff8c00',
 	            noneColor: '#ff1111'
 		},
->>>>>>> 2d8e32d0faef691bf44429577d82ba6329e6aec3
             },
 	}
 ]
