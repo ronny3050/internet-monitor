@@ -4,6 +4,8 @@
 var NodeHelper = require('node_helper');
 var speedtest = require('speedtest-net');
 var roundTo = require('round-to');
+var less = require('less');
+var fs   = require('fs'), path = require('path');
 
 module.exports = NodeHelper.create({
         start: function(){
@@ -18,18 +20,15 @@ module.exports = NodeHelper.create({
                 var st = speedtest({maxTime: payload.maxTime});
                 st.on('downloadspeedprogress', function (speed) {
                         var download = roundTo(speed, speed >= 10 ? 0 : 1);
-                        console.log('Download:',download);
                         that.sendSocketNotification('downloadSpeedProgress', download);
                 });
 
                 st.on('uploadspeedprogress', function (speed) {
                     var upload = roundTo(speed, speed >= 10 ? 0 : 1);
-                    console.log('upload:',upload);
                     that.sendSocketNotification('uploadSpeedProgress', upload);
                 });
 
                 st.on('data', function(data){
-                    console.log('DATA SEND');
                    that.sendSocketNotification('data',data);
                 });
 
