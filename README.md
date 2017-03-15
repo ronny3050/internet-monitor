@@ -30,13 +30,6 @@ modules: [
                 displaySpeed: true,
                 strengthIconSize: 80,
                 maxGaugeScale: 100,
-								wifiSymbol:{
-                		size: 50,
-                    fullColor: '#3afc25',
-                    almostColor: '#ffff0c',
-                    halfColor: '#ff8c00',
-										noneColor: '#ff1111'
-				},
             },
 	}
 ]
@@ -145,10 +138,7 @@ The following properties can be configured:
 		<tr>
 			<td><code>wifiSymbol (optional)</code></td>
 			<td>Customize WiFi Symbol<br>
-				<tr>
-					<td>size</td>
-					<td>Size of the wifi icon</td>
-				</tr>
+
 
 			</td>
 		</tr>
