@@ -18,7 +18,7 @@ To use this module, add it to the modules array in the `config/config.js` file:
 ````javascript
 modules: [
 	{
-		    module: 'internet-monitor',
+	    module: 'internet-monitor',
             position: 'top_center',
             header: 'Internet Monitor',
             config:{
@@ -40,7 +40,11 @@ You can also customize the wifi symbol.
 ````javascript
 modules: [
 	{
+<<<<<<< HEAD
 		    module: 'internet-monitor',
+=======
+	    module: 'internet-monitor',
+>>>>>>> 2d8e32d0faef691bf44429577d82ba6329e6aec3
             position: 'top_center',
             header: 'Internet Monitor',
             config:{
@@ -52,6 +56,7 @@ modules: [
                 displaySpeed: true,
                 strengthIconSize: 80,
                 maxGaugeScale: 100,
+<<<<<<< HEAD
 								wifiSymbol:{
                 		size: 50,
                     fullColor: '#3afc25',
@@ -59,6 +64,15 @@ modules: [
                     halfColor: '#ff8c00',
 										noneColor: '#ff1111'
 									},
+=======
+		wifiSymbol:{
+                    size: 50,
+                    fullColor: '#3afc25',
+                    almostColor: '#ffff0c',
+                    halfColor: '#ff8c00',
+	            noneColor: '#ff1111'
+		},
+>>>>>>> 2d8e32d0faef691bf44429577d82ba6329e6aec3
             },
 	}
 ]
@@ -119,10 +133,30 @@ The following properties can be configured:
 				<br><b>Possible values:</b> <code>true</code> or <code>false</code>
 				<br><b>Default value:</b> <code>true</code>
 				<br><img src="https://github.com/ronny3050/internet-monitor/blob/master/.previews/preview_speed.png" ></img>
-
+	       <tr>
+			<td><code>strengthIconSize</code></td>
+			<td>Size of the strength icon<br>
+				<br><b>Default value:</b> <code>80</code>
 			</td>
 		</tr>
-
-
-	</tbody>
+		<tr>
+			<td><code>maxGaugeScale</code></td>
+			<td>Maximum gauge value (Mbps)<br>
+				<br><b>Default value:</b> <code>100</code>
+			</td>
+		</tr>
+		<tr>
+			<td><code>wifiSymbol</code></td>
+			<td>Customize WiFi Symbol (Optional)<br>
+			<p>
+				<ul>
+					<li><code>size</code> Size of the WiFi Symbol</li>
+					<li><code>fullColor</code>Hex color code for full strength &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="https://github.com/ronny3050/internet-monitor/blob/master/.previews/full.gif" width=10%></img></li>
+					<li><code>almostColor</code>Hex color code for almost strength &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="https://github.com/ronny3050/internet-monitor/blob/master/.previews/almost.gif" width=10%></img></li>
+					<li><code>halfColor</code>Hex color code for half strength &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="https://github.com/ronny3050/internet-monitor/blob/master/.previews/half.gif" width=10%></img></li>
+					<li><code>noneColor</code>Hex color code for 0 strength &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="https://github.com/ronny3050/internet-monitor/blob/master/.previews/none.png" width=10%></img></li>
+				</ul>
+			</p>
+		</tr>
+			
 </table>
