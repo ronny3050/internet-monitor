@@ -123,17 +123,6 @@ The following properties can be configured:
 			</td>
 		</tr>
 
-		<tr>
-			<td><code>strengthIconSize</code></td>
-			<td>Size of the strength icon<br>
-				<br><b>Default value:</b> <code>80</code>
-			</td>
-		</tr>
-		<tr>
-			<td><code>maxGaugeScale</code></td>
-			<td>Maximum gauge value (Mbps)<br>
-				<br><b>Default value:</b> <code>100</code>
-			</td>
-		</tr>
+		
 	</tbody>
 </table>
