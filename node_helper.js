@@ -4,8 +4,6 @@
 var NodeHelper = require('node_helper');
 var speedtest = require('speedtest-net');
 var roundTo = require('round-to');
-var less = require('less');
-var fs   = require('fs'), path = require('path');
 
 module.exports = NodeHelper.create({
         start: function(){
