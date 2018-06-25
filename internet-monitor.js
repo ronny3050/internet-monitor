@@ -140,6 +140,7 @@ Module.register("internet-monitor",{
             }
         }
         if (notification == 'ping') {
+            console.log('ping')
             if (this.downloadBarState == 'not_started')
                 this.updateDom();
             if (this.config.displayStrength) {
@@ -153,6 +154,8 @@ Module.register("internet-monitor",{
                     d = document.createElement("div");
                     $(d).appendTo('#pingDiv');
                 }
+
+                payload = 150;
 
                 if(this.config.hasOwnProperty('wifiSymbol')) {
                     if (payload < 70) {
@@ -238,13 +241,16 @@ Module.register("internet-monitor",{
     getDom: function(){
         var wrapper = document.createElement("div");
         wrapper.className = "small";
+        console.log(this.config);
         if(this.config.displayStrength)
         {
+            console.log('creating pingDiv');
             var pingDiv = document.createElement("div");
             pingDiv.id = "pingDiv";
             wrapper.appendChild(pingDiv);
         }
         if(this.config.displaySpeed) {
+            console.log('creating strength');
             var downloadSpeedGauge = document.createElement("div");
             downloadSpeedGauge.id = 'downloadSpeedGauge';
 
