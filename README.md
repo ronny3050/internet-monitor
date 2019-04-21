@@ -30,7 +30,7 @@ modules: [
                 displayStrength: true,
                 displaySpeed: true,
                 strengthIconSize: 80,
-				maxGaugeScale: 100,
+                maxGaugeScale: 100,
             },
 	}
 ]
