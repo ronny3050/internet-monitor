@@ -15,13 +15,6 @@ Module.register("internet-monitor",{
 		displaySpeed: true,
 		strengthIconSize: 80,
 		maxGaugeScale: 100,
-		wifiSymbol: {
-			size: 50,
-			fullColor: "#3afc25",
-			almostColor: "#ffff0c",
-			halfColor: "$ff8c00",
-			noneColor: "#ff1111"
-		}
 	},
 	payload: [],
 
@@ -268,7 +261,7 @@ Module.register("internet-monitor",{
 			wrapper.appendChild(pingDiv);
 		}
 		if(this.config.displaySpeed) {
-			console.log("creating strength");
+			console.log("creating speed");
 			var downloadSpeedGauge = document.createElement("div");
 			downloadSpeedGauge.id = "downloadSpeedGauge";
 

@@ -134,7 +134,7 @@ The following properties can be configured:
 		</tr>
 		<tr>
 			<td><code>serverId</code></td>
-			<td>Test against specific SpeedTest server<br>
+			<td>Test against specific SpeedTest server (optional)<br>
 				<br><b>Default value:</b> <code>''</code>
 				<br>List of servers <a href="https://www.speedtest.net/speedtest-servers-static.php" target="new">can be found at SpeedTest</a>.
 			</td>
