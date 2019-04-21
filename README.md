@@ -26,10 +26,11 @@ modules: [
                 maxTime: 20000,
                 updateInterval: 0,
                 verbose: false,
+                serverId: "12667",
                 displayStrength: true,
                 displaySpeed: true,
                 strengthIconSize: 80,
-                maxGaugeScale: 100,
+				maxGaugeScale: 100,
             },
 	}
 ]
@@ -129,6 +130,13 @@ The following properties can be configured:
 			<td><code>maxGaugeScale</code></td>
 			<td>Maximum gauge value (Mbps)<br>
 				<br><b>Default value:</b> <code>100</code>
+			</td>
+		</tr>
+		<tr>
+			<td><code>serverId</code></td>
+			<td>Test against specific SpeedTest server<br>
+				<br><b>Default value:</b> <code>''</code>
+				<br>List of servers <a href="https://www.speedtest.net/speedtest-servers-static.php" target="new">can be found at SpeedTest</a>.
 			</td>
 		</tr>
 		<tr>
