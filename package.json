@@ -4,7 +4,9 @@
   "description": "Displays ping, download and upload speed on your smart mirror.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "keywords": [
     "internet",
@@ -14,6 +16,8 @@
   "license": "MIT",
   "dependencies": {
     "round-to": "^1.1.0",
-    "speedtest-net": "^1.2.7"
-  }
+    "speedtest-net": "^1.2.7",
+    "snyk": "^1.232.0"
+  },
+  "snyk": true
 }
