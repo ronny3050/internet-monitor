@@ -13,7 +13,9 @@
   "author": "Debayan Deb",
   "license": "MIT",
   "dependencies": {
+    "justgage": "^1.3.5",
     "round-to": "^1.1.0",
-    "speedtest-net": "^1.5.0"
+    "speedtest-net": "^1.5.0",
+    "raphael": "^2.2.8"
   }
 }
