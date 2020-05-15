@@ -85,24 +85,12 @@ Module.register("internet-monitor",{
 		}
 
 		if (notification == "ping") {
-			console.log("ping");
-			if (this.downloadBarState == "not_started") {
-				this.updateDom();
-			}
+			console.log("ping [" + payload + "]");
+			// if (this.downloadBarState == "not_started") {
+			// 	this.updateDom();
+			// }
 
 			if (this.config.displayStrength) {
-				// var d = document.createElement("div");
-				// if (this.downloadBarState == "not_started") {
-				// 	// d = document.createElement("div");
-				// 	$(d).appendTo("#pingDiv");
-				// }
-				// else {
-				// 	$("#pingDiv").children().remove();
-				// 	d = document.createElement("div");
-				// 	$(d).appendTo("#pingDiv");
-				// }
-
-				payload = 150;
 
 				if(this.config.hasOwnProperty("wifiSymbol")) {
 					if (payload < 70) {
@@ -164,17 +152,17 @@ Module.register("internet-monitor",{
 				}
 				else{
 					if(payload < 70){
-						$(d).append("<img src=\"" + this.data.path + "images/" + "strength_full.png\" width=" + this.config.strengthIconSize +"\"height=" + this.config.strengthIconSize +"/>");
+						$("#pingStrength").attr("src",this.file("images/strength_full.png"));
 					}
 					else if(payload >= 70 && payload < 100){
-						$(d).append("<img src=\"" + this.data.path + "images/" + "strength_almost.png\" width=" + this.config.strengthIconSize +"\"height=" + this.config.strengthIconSize + "/>");
+						$("#pingStrength").attr("src",this.file("images/strength_almost.png"));
 					}
 					else if(payload >= 100 && payload < 150){
-						$(d).append("<img src=\"" + this.data.path + "images/" + "strength_half.png\" width=" + this.config.strengthIconSize +"\"height=" + this.config.strengthIconSize + "/>");
+						$("#pingStrength").attr("src",this.file("images/strength_half.png"));
 					}
 					else if(payload >= 150)
 					{
-						$(d).append("<img src=\"" + this.data.path + "images/" + "strength_none.png\" width=" + this.config.strengthIconSize +"\"height=" + this.config.strengthIconSize + "/>");
+						$("#pingStrength").attr("src",this.file("images/strength_none.png"));
 					}
 				}
 
@@ -194,7 +182,14 @@ Module.register("internet-monitor",{
 			var pingDiv = document.createElement("div");
 			pingDiv.id = "pingDiv";
 			pingDiv.className = "strength";
-			pingDiv.innerHTML = "<b> testing </b> ";
+			
+			var img = document.createElement("img");
+			img.src = this.file("images/strength_none.png");
+			img.height = this.config.strengthIconSize;
+			img.id = "pingStrength";
+			img.className = "pingStrength";
+			pingDiv.appendChild(img);
+
 			wrapper.appendChild(pingDiv);
 		}
 		
