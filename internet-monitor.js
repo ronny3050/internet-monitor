@@ -8,8 +8,7 @@ Module.register("internet-monitor",{
 	defaults : {
 		serverId: "",
 		type: "",
-		updateInterval: 0,
-		maxTime: 20000,
+		updateInterval: 60 * 1000 * 30,
 		verbose: false,
 		displayStrength: true,
 		displaySpeed: true,
@@ -23,23 +22,7 @@ Module.register("internet-monitor",{
 
 	start : function(){
 		console.log("Internet-monitor module started!");
-		
-		// this.sendSocketNotification("Start",this.config);
-		// Schedule update timer.
-		var self = this;
-		if(this.config.updateInterval != 0)
-		{
-			setInterval(function() {
-				self.updating= true;
-				self.sendSocketNotification("Start",self.config);
-			}, this.config.updateInterval);
-		} else {
-			setTimeout(function() {
-				self.updating= true;
-				self.sendSocketNotification("Start",self.config);
-			}, 2000);
-		}
-		
+		this.sendSocketNotification("Start", this.config);		
 	},
 
 	getScripts: function() {
@@ -52,8 +35,15 @@ Module.register("internet-monitor",{
 		return ["internet-monitor.css"]
 	},
 
-	socketNotificationReceived: function(notification, payload) {
+	notificationReceived: function(notification, payload, sender) {
+		// Module is ready. Start the initial check
+		if (notification == "MODULE_DOM_CREATED") {
+			console.debug("DOM loaded.");
+			this.sendSocketNotification("Check", this.config);
+		}
+	},
 
+	socketNotificationReceived: function(notification, payload) {
 		if (notification == "downloadSpeedProgress") {
 			if (this.config.displaySpeed) {
 				if (this.downloadBarState == "not_started") {
@@ -79,13 +69,12 @@ Module.register("internet-monitor",{
 				}
 				$("#internetData > div").html(
 					"    Server:   " + payload.server.host).append("<br/>" +
-                    " Location:   " + payload.server.location + " (" + payload.server.country + ")").append("<br/>" +
-                    "  Distance:   " + payload.server.distance + " km").append("</div>");
+                    " Location:   " + payload.server.location + " (" + payload.server.country + ")").append("<br/></div>");
 			}
 		}
 
 		if (notification == "ping") {
-			console.log("ping [" + payload + "]");
+			// console.log("ping [" + payload + "]");
 			// if (this.downloadBarState == "not_started") {
 			// 	this.updateDom();
 			// }

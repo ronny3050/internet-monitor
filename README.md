@@ -7,9 +7,11 @@ Monitors internet statistics such as strength and speed information on a smart m
 
 ![StrengthFullscreen Visualization](https://github.com/ronny3050/internet-monitor/blob/master/.previews/preview_strength_fullscreen.png)
 
+**This is a fork of ronny3050's module with some modifications to get it working again.**
+
 ## Installing the module
 
-To install the module, just clone this repository to your __modules__ folder: `git clone https://github.com/ronny3050/internet-monitor.git internet-monitor`.
+To install the module, just clone this repository to your __modules__ folder: `git clone https://github.com/BrianHepler/internet-monitor.git internet-monitor`.
 Then run `cd internet-monitor` and `npm install` which will install the dependencies.
 
 ## Using the module
@@ -86,26 +88,13 @@ The following properties can be configured:
 			</td>
 		</tr>
 		<tr>
-			<td><code>maxTime</code></td>
-			<td>Maximum time to test internet speed (Milliseconds)<br>
-				<br><b>Default value:</b> <code>20000</code>
-			</td>
-		</tr>
-		<tr>
 			<td><code>updateInterval</code></td>
 			<td>Time to rerun/update tests (Milliseconds)<br>
 				<br><b>Default value:</b> <code>0</code>
 				<br>Please note that <code>updateInterval</code> has to be greater than <code>maxTime</code>
 			</td>
 		</tr>
-		<tr>
-			<td><code>verbose</code></td>
-			<td>Display additional information about test<br>
-				<br><b>Possible values:</b> <code>true</code> or <code>false</code>
-				<br><b>Default value:</b> <code>false</code>
-				<br><img src="https://github.com/ronny3050/internet-monitor/blob/master/.previews/preview_verbose.png"></img>
-			</td>
-		</tr>
+
 		<tr>
 			<td><code>displayStrength</code></td>
 			<td>Display Internet strength<br>
