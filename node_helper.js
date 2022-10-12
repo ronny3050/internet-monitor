@@ -71,7 +71,7 @@ module.exports = NodeHelper.create({
 	scheduleUpdate: function() {
 		if (this.config.updateInterval < 60*1000) this.config.updateInterval = 60*1000
 		clearInterval(this.interval);
-		this.interval = setInterval(this.checkSpeed(), this.config.update);
+		this.interval = setInterval(()=>this.checkSpeed(), this.config.updateInterval);
 	  },
 
 });

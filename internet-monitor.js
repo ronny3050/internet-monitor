@@ -38,7 +38,6 @@ Module.register("internet-monitor",{
 	notificationReceived: function(notification, payload, sender) {
 		// Module is ready. Start the initial check
 		if (notification == "MODULE_DOM_CREATED") {
-			console.debug("DOM loaded.");
 			this.sendSocketNotification("Check", this.config);
 		}
 	},
