@@ -7,9 +7,11 @@ Monitors internet statistics such as strength and speed information on a smart m
 
 ![StrengthFullscreen Visualization](https://github.com/ronny3050/internet-monitor/blob/master/.previews/preview_strength_fullscreen.png)
 
+**This is a fork of ronny3050's module with some modifications to get it working again.**
+
 ## Installing the module
 
-To install the module, just clone this repository to your __modules__ folder: `git clone https://github.com/ronny3050/internet-monitor.git internet-monitor`.
+To install the module, just clone this repository to your __modules__ folder: `git clone https://github.com/BrianHepler/internet-monitor.git internet-monitor`.
 Then run `cd internet-monitor` and `npm install` which will install the dependencies.
 
 ## Using the module
@@ -69,88 +71,13 @@ modules: [
 
 The following properties can be configured:
 
-<table width="100%">
-	<!-- why, markdown... -->
-	<thead>
-		<tr>
-			<th>Option</th>
-			<th width="100%">Description</th>
-		</tr>
-	<thead>
-	<tbody>
-		<tr>
-			<td><code>type</code></td>
-			<td>Style of the speed gauges<br>
-			<br><b>Possible values:</b> <code>'minimal'</code> Minimalistic Style as shown in the second image above.
-			<br><b>Default value:</b> <code>''</code>
-			</td>
-		</tr>
-		<tr>
-			<td><code>maxTime</code></td>
-			<td>Maximum time to test internet speed (Milliseconds)<br>
-				<br><b>Default value:</b> <code>20000</code>
-			</td>
-		</tr>
-		<tr>
-			<td><code>updateInterval</code></td>
-			<td>Time to rerun/update tests (Milliseconds)<br>
-				<br><b>Default value:</b> <code>0</code>
-				<br>Please note that <code>updateInterval</code> has to be greater than <code>maxTime</code>
-			</td>
-		</tr>
-		<tr>
-			<td><code>verbose</code></td>
-			<td>Display additional information about test<br>
-				<br><b>Possible values:</b> <code>true</code> or <code>false</code>
-				<br><b>Default value:</b> <code>false</code>
-				<br><img src="https://github.com/ronny3050/internet-monitor/blob/master/.previews/preview_verbose.png"></img>
-			</td>
-		</tr>
-		<tr>
-			<td><code>displayStrength</code></td>
-			<td>Display Internet strength<br>
-				<br><b>Possible values:</b> <code>true</code> or <code>false</code>
-				<br><b>Default value:</b> <code>true</code>
-				<br><img src="https://github.com/ronny3050/internet-monitor/blob/master/.previews/preview_strength.png" ></img>
-			</td>
-		</tr>
-		<tr>
-			<td><code>displaySpeed</code></td>
-			<td>Display download and upload speed gauges<br>
-				<br><b>Possible values:</b> <code>true</code> or <code>false</code>
-				<br><b>Default value:</b> <code>true</code>
-				<br><img src="https://github.com/ronny3050/internet-monitor/blob/master/.previews/preview_speed.png" ></img>
-	       <tr>
-			<td><code>strengthIconSize</code></td>
-			<td>Size of the strength icon<br>
-				<br><b>Default value:</b> <code>80</code>
-			</td>
-		</tr>
-		<tr>
-			<td><code>maxGaugeScale</code></td>
-			<td>Maximum gauge value (Mbps)<br>
-				<br><b>Default value:</b> <code>100</code>
-			</td>
-		</tr>
-		<tr>
-			<td><code>serverId</code></td>
-			<td>Test against specific SpeedTest server (optional)<br>
-				<br><b>Default value:</b> <code>''</code>
-				<br>List of servers <a href="https://www.speedtest.net/speedtest-servers-static.php" target="new">can be found at SpeedTest</a>.
-			</td>
-		</tr>
-		<tr>
-			<td><code>wifiSymbol</code></td>
-			<td>Customize WiFi Symbol (Optional)<br>
-			<p>
-				<ul>
-					<li><code>size</code> Size of the WiFi Symbol</li>
-					<li><code>fullColor</code>Hex color code for full strength &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="https://github.com/ronny3050/internet-monitor/blob/master/.previews/full.gif" width=10%></img></li>
-					<li><code>almostColor</code>Hex color code for almost strength &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="https://github.com/ronny3050/internet-monitor/blob/master/.previews/almost.gif" width=10%></img></li>
-					<li><code>halfColor</code>Hex color code for half strength &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="https://github.com/ronny3050/internet-monitor/blob/master/.previews/half.gif" width=10%></img></li>
-					<li><code>noneColor</code>Hex color code for 0 strength &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="https://github.com/ronny3050/internet-monitor/blob/master/.previews/none.png" width=10%></img></li>
-				</ul>
-			</p>
-		</tr>
-			
-</table>
+| Option | Description |
+|--------|--------------|
+|type | Style of the speed gauges<br>Possible values:</b> <code>'minimal'</code> Minimalistic Style as shown in the second image above.<br><b>Default value:</b> <code>''</code> |
+| updateInterval | Time to rerun/update tests (Milliseconds)<br><b>Default value:</b> <code>0</code><br>Please note that <code>updateInterval</code> has to be greater than <code>maxTime</code> |
+| displayStrength | Display Internet Strength<br><b>Possible values:</b> <code>true</code> or <code>false</code><br><b>Default value:</b> <code>true</code><br><img src="https://github.com/ronny3050/internet-monitor/blob/master/.previews/preview_strength.png" ></img> | 
+| displaySpeed | Display download and upload speed gauges<br><b>Possible values:</b> <code>true</code> or <code>false</code><br><b>Default value:</b> <code>true</code><br><img src="https://github.com/ronny3050/internet-monitor/blob/master/.previews/preview_speed.png" ></img> |
+| strengthIconSize | Size of the strength icon<br><b>Default value:</b> <code>80</code> |
+| maxGuageScale | Maximum gauge value (Mbps)<br><b>Default value:</b> <code>100</code> |
+| serverId | Test against specific SpeedTest server (optional)<br><b>Default value:</b> <code>''</code><br>List of servers <a href="https://www.speedtest.net/speedtest-servers-static.php" target="new">can be found at SpeedTest</a>. |
+| wifiSymbol | Customize WiFi Symbol (Optional)<br><p><ul><li><code>size</code> Size of the WiFi Symbol</li><li><code>fullColor</code>Hex color code for full strength &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="https://github.com/ronny3050/internet-monitor/blob/master/.previews/full.gif" width=10%></img></li><li><code>almostColor</code>Hex color code for almost strength &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="https://github.com/ronny3050/internet-monitor/blob/master/.previews/almost.gif" width=10%></img></li><li><code>halfColor</code>Hex color code for half strength &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="https://github.com/ronny3050/internet-monitor/blob/master/.previews/half.gif" width=10%></img></li><li><code>noneColor</code>Hex color code for 0 strength &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="https://github.com/ronny3050/internet-monitor/blob/master/.previews/none.png" width=10%></img></li></ul></p> |
