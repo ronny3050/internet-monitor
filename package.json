@@ -1,10 +1,16 @@
 {
   "name": "internet-speed",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Displays ping, download and upload speed on your smart mirror.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/BrianHepler/internet-monitor"
+  },
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "test": "npm run lint"
   },
   "keywords": [
     "internet",
@@ -13,7 +19,15 @@
   "author": "Debayan Deb",
   "license": "MIT",
   "dependencies": {
-    "round-to": "^1.1.0",
-    "speedtest-net": "^1.2.7"
+    "speedtest-net": "flying19880517/speedtest.net",
+    "jquery": "^3.7.1",
+    "justgage": "^1.6.1"
+  },
+  "devDependencies": {
+    "@eslint/js": "^8.56.0",
+    "@stylistic/eslint-plugin": "^1.5.3",
+    "eslint": "^8.56.0",
+    "eslint-plugin-import": "^2.29.1",
+    "globals": "^13.24.0"
   }
 }
